@@ -11,6 +11,7 @@ def backup(source, dest, gpg_key):
         "--num-retries", "3",
         "--asynchronous-upload",
         "--volsize", "10",
+        "--allow-source-mismatch",
         source, dest
     ])
 
@@ -20,6 +21,7 @@ def cleanup(dest, gpg_key):
         "--force",
         "--verbosity", "notice",
         "--encrypt-key", gpg_key,
+        "--allow-source-mismatch",
         dest
     ])
 
